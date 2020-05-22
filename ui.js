@@ -15,14 +15,9 @@ class UI {
 
   async paint(data) {
     this.location.textContent = data.name;
-    // this.description.textContent = data.weather.description;
+    this.description.textContent = `General description: ${data.weather[0].description}`;
     this.tempString.textContent = `Current Temperature: ${data.main.temp}`;
-    // let iconImage = '';
-    // data.weather.map((description, icon) => {
-    //   this.description.textContent += description;
-    //   iconImage += icon;
-    // });
-    // this.icon.setAttribute('src', data.weather.icon);
+    // this.icon.setAttribute('src', data.weather[0].icon);
     this.humidity.textContent = `Relative Humidity: ${data.main.humidity}`;
     this.feels_like.textContent = `Feels Like: ${data.main.feels_like}`;
     this.temp_max.textContent = `Max Temperature: ${data.main.temp_max}`;
@@ -31,5 +26,3 @@ class UI {
     this.visibility.textContent = `Visibility: ${data.visibility}`;
   }
 }
-
-// Unable to pull main description and Icon because they're in an object called "Weather" and the contents of said object are within an array
